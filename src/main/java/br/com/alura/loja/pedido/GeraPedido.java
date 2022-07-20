@@ -11,18 +11,22 @@ public class GeraPedido {
     private BigDecimal valorOrcamento;
     private int quantidadeItens;
 
+    //injecao de dependencia: PedidoRepository, EmailService, ....
     public GeraPedido(String cliente, BigDecimal valorOrcamento, int quantidadeItens) {
         this.cliente = cliente;
         this.valorOrcamento = valorOrcamento;
         this.quantidadeItens = quantidadeItens;
     }
 
-    public void executa(){
-        Orcamento orcamento = new Orcamento(this.valorOrcamento, this.quantidadeItens);
+    public String getCliente() {
+        return cliente;
+    }
 
-        Pedido pedido = new Pedido(cliente, LocalDateTime.now(), orcamento);
+    public BigDecimal getValorOrcamento() {
+        return valorOrcamento;
+    }
 
-        System.out.println("Salvar pedido");//seria a lógica de salvar o pedido no banco de dados
-        System.out.println("Enviar email");//seria a lógica de enviar o email para o cliente
+    public int getQuantidadeItens() {
+        return quantidadeItens;
     }
 }
