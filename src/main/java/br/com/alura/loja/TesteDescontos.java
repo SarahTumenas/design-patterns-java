@@ -9,11 +9,11 @@ import java.math.BigDecimal;
 public class TesteDescontos {
 
     public static void main(String[] args) {
-        Orcamento orcamento = new Orcamento(new BigDecimal("200"), 6);
+        Orcamento orcamento = new Orcamento();
 
-        Orcamento orcamento2 = new Orcamento(new BigDecimal("200"), 4);
+        Orcamento orcamento2 = new Orcamento();
 
-        Orcamento orcamento3 = new Orcamento(new BigDecimal("600"), 4);
+        Orcamento orcamento3 = new Orcamento();
 
         CalculadoraDeDescontos calculadora = new CalculadoraDeDescontos();
 

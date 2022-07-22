@@ -5,13 +5,15 @@ import br.com.alura.loja.orcamento.situacao.Finalizado;
 import br.com.alura.loja.orcamento.situacao.SituacaoOrcamento;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Orcamento {
 
     private BigDecimal valor;
-    private int quantidadeItens;
+   private SituacaoOrcamento situacao;
 
-    private SituacaoOrcamento situacao;
+   private List<ItemOrcamento> itens;
 
     public SituacaoOrcamento getSituacao() {
         return situacao;
@@ -21,10 +23,10 @@ public class Orcamento {
         this.situacao = situacao;
     }
 
-    public Orcamento(BigDecimal valor, int quantidadeItens) {
+    public Orcamento() {
 
-        this.valor = valor;
-        this.quantidadeItens = quantidadeItens;
+        this.valor = BigDecimal.ZERO;
+        this.itens = new ArrayList<>();
         this.situacao = new EmAnalise();
     }
 
@@ -50,10 +52,15 @@ public class Orcamento {
     }
 
     public int getQuantidadeItens() {
-        return quantidadeItens;
+        return itens.size();
     }
 
     public boolean isFinalizado() {
         return situacao instanceof Finalizado;
+    }
+
+    public void adicionarItem(ItemOrcamento item) {
+        this.valor = this.valor.add(item.getValor());
+        this.itens.add(item);
     }
 }

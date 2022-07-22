@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 public class TestesAdapter {
     public static void main(String[] args) {
-        Orcamento orcamento = new Orcamento(new BigDecimal("100"), 1);
+        Orcamento orcamento = new Orcamento();
         orcamento.aprovar();
         orcamento.finalizar();
 
