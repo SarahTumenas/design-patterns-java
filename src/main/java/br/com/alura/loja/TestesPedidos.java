@@ -1,8 +1,9 @@
 package br.com.alura.loja;
 
 
-import br.com.alura.loja.acao.EnviarEmailPedido;
-import br.com.alura.loja.acao.SalvarPedidoNoBancoDeDados;
+import br.com.alura.loja.pedido.acao.EnviarEmailPedido;
+import br.com.alura.loja.pedido.acao.LogDePedido;
+import br.com.alura.loja.pedido.acao.SalvarPedidoNoBancoDeDados;
 import br.com.alura.loja.pedido.GeraPedido;
 import br.com.alura.loja.pedido.GeraPedidoHandler;
 
@@ -21,7 +22,8 @@ public class TestesPedidos {
         GeraPedidoHandler handler = new GeraPedidoHandler(
                 Arrays.asList(
                         new SalvarPedidoNoBancoDeDados(),
-                        new EnviarEmailPedido()
+                        new EnviarEmailPedido(),
+                        new LogDePedido()
                 )
         );
                 handler.execute(gerador);
