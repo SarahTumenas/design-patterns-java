@@ -26,6 +26,8 @@ public class TestesPedidos {
                         new LogDePedido()
                 )
         );
-                handler.execute(gerador);
+                handler.execute(gerador); //atua como uma fachada : padrao de projeto Facade
+
+
     }
 }
